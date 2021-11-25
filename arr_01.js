@@ -2,22 +2,24 @@
 
 /*
 Aufgabe:
-<html><head></head><body><h1></h1><p></p></body></html>
 
-	---->
+<html><head></head><body><h1></h1><p></p></body></html>
+	
+---->
 
 <html>
 	<head>
 	</head>
 	<body>
-		<h1></h1>
-		<p></p>
+		<h1>
+        </h1>
+		<p>
+        </p>
 	</body>
 </html>
 
 --> return : "\n"  
 --> Tab: "\t"
-
 
 Verwenden Sie dafür die untenstehenden Arrays
 */
@@ -69,7 +71,6 @@ function getTags(tag,op) {
 }
 
 // Modul: Ausgabe | Test
-//output("hi");
 function output(outputData) {
     console.log(outputData);
 }
