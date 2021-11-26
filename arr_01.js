@@ -35,9 +35,9 @@ function getHTML() {
 
     for (let i = 0; i < tags.length; i++) {
         if (isOpenTag(tags[i])) { 
-            htmlStr += getTags(tags[i],"open"); 
+            htmlStr += getTag(tags[i],"open"); 
         } else {
-            htmlStr += getTags(tags[i],"close");
+            htmlStr += getTag(tags[i],"close");
         }
     }
 
@@ -59,15 +59,23 @@ function isOpenTag(tag) {
 }
 
 // Modul: Zusammenbau: <tagStr> --> Tests:
-function getTags(tag,op) {
+function getTag(tag,op) {
     switch (op) {
         case "open":
-            return controls[0] + tag + controls[2];
+            return getTabs(stack.length-1) + controls[0] + tag + controls[2] + "\n";
         case "close":
-            return controls[1] + tag + controls[2];
+            return getTabs(stack.length) + controls[1] + tag + controls[2] + "\n";
         default:
             return "#!";
     } 
+}
+
+function getTabs(tabCount) {
+    let tabs = "";
+    for (let i = 0; i < tabCount; i++) {
+        tabs += "\t"
+    }
+    return tabs;
 }
 
 // Modul: Ausgabe | Test
